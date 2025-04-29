@@ -1,0 +1,524 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictional Astrologer | Vedic Astrology Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cosmic: {
+                            900: '#0f0c29',
+                            800: '#1a1a3e',
+                            700: '#2a2a5e',
+                        },
+                        gold: {
+                            500: '#d4af37',
+                            400: '#e6c35d',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@preline/preline@2.0.0/dist/preline.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .star-bg {
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+            background-image: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=100%');
+            background-size: cover;
+            background-position: center;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-cosmic-900 text-gray-200 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-cosmic-800 bg-opacity-90 z-50 border-b border-gold-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-serif text-gold-500 font-bold">Predictional Astrologer</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gold-400 hover:text-white transition">Home</a>
+                    <a href="#services" class="text-gray-300 hover:text-white transition">Services</a>
+                    <a href="#blog" class="text-gray-300 hover:text-white transition">Blog</a>
+                    <a href="#experience" class="text-gray-300 hover:text-white transition">Experience</a>
+                    <a href="#contact" class="text-gray-300 hover:text-white transition">Contact</a>
+                    <a href="#book" class="bg-gold-500 text-cosmic-900 px-4 py-2 rounded-md font-medium hover:bg-gold-400 transition">Book Now</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-300 hover:text-white">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cosmic-800">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gold-400">Home</a>
+                <a href="#services" class="block px-3 py-2 text-gray-300">Services</a>
+                <a href="#blog" class="block px-3 py-2 text-gray-300">Blog</a>
+                <a href="#experience" class="block px-3 py-2 text-gray-300">Experience</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-300">Contact</a>
+                <a href="#book" class="block px-3 py-2 bg-gold-500 text-cosmic-900 rounded-md">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="star-bg min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">
+                        Discover Your <span class="text-gold-500">Cosmic Blueprint</span>
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-8">
+                        Authentic Vedic astrology readings to illuminate your life path, relationships, and destiny according to your birth chart.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#book" class="bg-gold-500 text-cosmic-900 px-6 py-3 rounded-md font-medium hover:bg-gold-400 transition">
+                            Book Consultation
+                        </a>
+                        <a href="#services" class="border border-gold-500 text-gold-400 px-6 py-3 rounded-md font-medium hover:bg-gold-500 hover:text-cosmic-900 transition">
+                            Explore Services
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-cosmic-800 bg-opacity-70 p-8 rounded-xl border border-gold-500">
+                        <h3 class="text-2xl font-serif text-gold-500 mb-4">Quick Zodiac Insight</h3>
+                        <div class="mb-4">
+                            <label class="block text-gray-300 mb-2">Your Birth Date</label>
+                            <input type="date" class="w-full bg-cosmic-700 border border-gray-600 rounded-md px-4 py-2 text-white">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-300 mb-2">Birth Time (optional)</label>
+                            <input type="time" class="w-full bg-cosmic-700 border border-gray-600 rounded-md px-4 py-2 text-white">
+                        </div>
+                        <button class="w-full bg-gold-500 text-cosmic-900 py-2 rounded-md font-medium hover:bg-gold-400 transition">
+                            Get Your Sign
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-cosmic-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Vedic Astrology Services</h2>
+                <div class="w-24 h-1 bg-gold-500 mx-auto"></div>
+                <p class="text-xl text-gray-300 mt-6 max-w-3xl mx-auto">
+                    Discover our comprehensive range of astrological services designed to provide clarity and guidance.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-cosmic-700 rounded-xl p-6 border border-cosmic-600 transition duration-300 card-hover">
+                    <div class="text-gold-500 text-4xl mb-4">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="text-xl font-serif text-white mb-3">Birth Chart Analysis</h3>
+                    <p class="text-gray-300 mb-4">
+                        Detailed interpretation of your Janam Kundali (birth chart) with planetary positions and their influences.
+                    </p>
+                    <div class="text-gold-400 font-medium mb-4">From ₹1,500</div>
+                    <a href="#book" class="text-gold-500 hover:text-gold-400 transition">Book Now →</a>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="bg-cosmic-700 rounded-xl p-6 border border-cosmic-600 transition duration-300 card-hover">
+                    <div class="text-gold-500 text-4xl mb-4">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3 class="text-xl font-serif text-white mb-3">Muhurta Selection</h3>
+                    <p class="text-gray-300 mb-4">
+                        Auspicious timing for important events like marriage, business launch, or property purchase.
+                    </p>
+                    <div class="text-gold-400 font-medium mb-4">From ₹2,000</div>
+                    <a href="#book" class="text-gold-500 hover:text-gold-400 transition">Book Now →</a>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="bg-cosmic-700 rounded-xl p-6 border border-cosmic-600 transition duration-300 card-hover">
+                    <div class="text-gold-500 text-4xl mb-4">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-serif text-white mb-3">Compatibility Analysis</h3>
+                    <p class="text-gray-300 mb-4">
+                        In-depth examination of relationship compatibility for marriage or business partnerships.
+                    </p>
+                    <div class="text-gold-400 font-medium mb-4">From ₹2,500</div>
+                    <a href="#book" class="text-gold-500 hover:text-gold-400 transition">Book Now →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-cosmic-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Astrology Insights</h2>
+                <div class="w-24 h-1 bg-gold-500 mx-auto"></div>
+                <p class="text-xl text-gray-300 mt-6 max-w-3xl mx-auto">
+                    Explore our latest articles on Vedic astrology, planetary transits, and spiritual growth.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="bg-cosmic-800 rounded-xl overflow-hidden border border-cosmic-700 transition duration-300 card-hover">
+                    <img src="https://images.unsplash.com/photo-1534447677768-0e0f1a0d0e1f?q=80&w=500" alt="Zodiac Signs" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-gold-500 text-sm mb-2">Zodiac Signs</div>
+                        <h3 class="text-xl font-serif text-white mb-3">Understanding Your Moon Sign in Vedic Astrology</h3>
+                        <p class="text-gray-300 mb-4">
+                            Discover how your Chandra Rashi influences your emotions, instincts, and subconscious mind.
+                        </p>
+                        <a href="#" class="text-gold-500 hover:text-gold-400 transition">Read More →</a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="bg-cosmic-800 rounded-xl overflow-hidden border border-cosmic-700 transition duration-300 card-hover">
+                    <img src="https://images.unsplash.com/photo-1534447677768-0e0f1a0d0e1f?q=80&w=500" alt="Moon Phases" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-gold-500 text-sm mb-2">Moon Phases</div>
+                        <h3 class="text-xl font-serif text-white mb-3">How the Current Lunar Cycle Affects Your Energy</h3>
+                        <p class="text-gray-300 mb-4">
+                            Learn to align your activities with the Moon's phases for optimal results in your personal and professional life.
+                        </p>
+                        <a href="#" class="text-gold-500 hover:text-gold-400 transition">Read More →</a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="bg-cosmic-800 rounded-xl overflow-hidden border border-cosmic-700 transition duration-300 card-hover">
+                    <img src="https://images.unsplash.com/photo-1534447677768-0e0f1a0d0e1f?q=80&w=500" alt="Planetary Transits" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-gold-500 text-sm mb-2">Planetary Transits</div>
+                        <h3 class="text-xl font-serif text-white mb-3">Saturn Retrograde 2023: Challenges and Opportunities</h3>
+                        <p class="text-gray-300 mb-4">
+                            Navigate the upcoming Saturn retrograde period with awareness and strategic planning.
+                        </p>
+                        <a href="#" class="text-gold-500 hover:text-gold-400 transition">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="border border-gold-500 text-gold-400 px-6 py-3 rounded-md font-medium hover:bg-gold-500 hover:text-cosmic-900 transition">
+                    View All Articles
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-cosmic-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">My Astrological Journey</h2>
+                <div class="w-24 h-1 bg-gold-500 mx-auto"></div>
+                <p class="text-xl text-gray-300 mt-6 max-w-3xl mx-auto">
+                    Over 15 years of dedicated practice in Vedic astrology with a lineage of traditional knowledge.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1544717305-2782549b7d0b?q=80&w=500" alt="Astrologer" class="rounded-xl border-4 border-gold-500">
+                        <div class="absolute -bottom-4 -right-4 bg-gold-500 text-cosmic-900 px-4 py-2 rounded-md font-serif font-bold">
+                            Certified Jyotish Acharya
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-xl font-serif text-gold-500 mb-2">Education & Certification</h3>
+                            <p class="text-gray-300">
+                                Trained under renowned Vedic astrologers in Varanasi, certified by the Indian Council of Astrological Sciences.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-serif text-gold-500 mb-2">Specializations</h3>
+                            <p class="text-gray-300">
+                                Expert in Prashna Kundali (horary astrology), Varshaphala (annual predictions), and Nadi astrology techniques.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-serif text-gold-500 mb-2">Philosophy</h3>
+                            <p class="text-gray-300">
+                                I believe astrology is a tool for self-awareness and empowerment, not fatalism. My readings focus on practical guidance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-cosmic-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Client Experiences</h2>
+                <div class="w-24 h-1 bg-gold-500 mx-auto"></div>
+                <p class="text-xl text-gray-300 mt-6 max-w-3xl mx-auto">
+                    Hear from those who have found clarity and direction through Vedic astrology.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Testimonial 1 -->
+                <div class="bg-cosmic-800 rounded-xl p-6 border border-cosmic-700">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gold-500 flex items-center justify-center text-cosmic-900 font-bold mr-4">AS</div>
+                        <div>
+                            <h4 class="font-serif text-white">Ananya Sharma</h4>
+                            <div class="flex text-gold-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "The birth chart reading was incredibly accurate and detailed. The astrologer explained complex concepts in simple terms and provided practical remedies that made a real difference."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Book Now Section -->
+        <section id="book" class="py-20 bg-cosmic-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Schedule Your Consultation</h2>
+                    <div class="w-24 h-1 bg-gold-500 mx-auto"></div>
+                    <p class="text-xl text-gray-300 mt-6 max-w-3xl mx-auto">
+                        Select your preferred service and time for a personalized Vedic astrology reading.
+                    </p>
+                </div>
+    
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Booking Form -->
+                    <div class="bg-cosmic-800 p-8 rounded-xl border border-gold-500">
+                        <form>
+                            <div class="mb-6">
+                                <label class="block text-gray-300 mb-2">Select Service</label>
+                                <select class="w-full bg-cosmic-700 border border-gray-600 rounded-md px-4 py-3 text-white">
+                                    <option value="">Choose a service</option>
+                                    <option>Birth Chart Analysis (₹1,500)</option>
+                                    <option>Muhurta Selection (₹2,000)</option>
+                                    <option>Compatibility Analysis (₹2,500)</option>
+                                    <option>Career Guidance (₹1,800)</option>
+                                </select>
+                            </div>
+    
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-gray-300 mb-2">Preferred Date</label>
+                                    <input type="date" class="w-full bg-cosmic-700 border border-gray-600 rounded-md px-4 py-3 text-white">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-300 mb-2">Preferred Time</label>
+                                    <input type="time" class="w-full bg-cosmic-700 border border-gray-600 rounded-md px-4 py-3 text-white">
+                                </div>
+                            </div>
+    
+                            <div class="mb-6">
+                                <label class="block text-gray-300 mb-2">Your Full Name</label>
+                                <input type="text" class="w-full bg-cosmic-700 border border-gray-600 rounded-md px-4 py-3 text-white">
+                            </div>
+    
+                            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                                <div>
+                                    <label class="block text-gray-300 mb-2">Email Address</label>
+                                    <input type="email" class="w-full bg-cosmic-700 border border-gray-600 rounded-md px-4 py-3 text-white">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-300 mb-2">Phone Number</label>
+                                    <input type="tel" class="w-full bg-cosmic-700 border border-gray-600 rounded-md px-4 py-3 text-white">
+                                </div>
+                            </div>
+    
+                            <button class="w-full bg-gold-500 text-cosmic-900 py-3 rounded-md font-medium hover:bg-gold-400 transition">
+                                Confirm Booking
+                            </button>
+                        </form>
+                    </div>
+    
+                    <!-- Booking Info -->
+                    <div class="space-y-6">
+                        <div class="bg-cosmic-800 p-8 rounded-xl border border-gold-500">
+                            <h3 class="text-2xl font-serif text-gold-500 mb-4">Consultation Process</h3>
+                            <ul class="space-y-4 text-gray-300">
+                                <li class="flex items-start">
+                                    <i class="fas fa-calendar-check text-gold-500 mt-1 mr-3"></i>
+                                    <span>1. Select your preferred date/time</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-rupee-sign text-gold-500 mt-1 mr-3"></i>
+                                    <span>2. Make secure payment (UPI/Cards)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-video text-gold-500 mt-1 mr-3"></i>
+                                    <span>3. Receive Zoom link via email/SMS</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-file-pdf text-gold-500 mt-1 mr-3"></i>
+                                    <span>4. Get recording + PDF report post-session</span>
+                                </li>
+                            </ul>
+                        </div>
+    
+                        <div class="bg-cosmic-800 p-8 rounded-xl border border-gold-500">
+                            <h3 class="text-2xl font-serif text-gold-500 mb-4">Available Slots</h3>
+                            <div class="grid grid-cols-2 gap-4 text-gray-300">
+                                <div class="bg-cosmic-700 p-3 rounded-md text-center">Mon-Fri: 10 AM - 7 PM</div>
+                                <div class="bg-cosmic-700 p-3 rounded-md text-center">Sat: 10 AM - 2 PM</div>
+                                <div class="col-span-2 text-sm text-gold-500 text-center">*All times in IST (UTC+5:30)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-cosmic-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Connect With Me</h2>
+                <div class="w-24 h-1 bg-gold-500 mx-auto"></div>
+                <p class="text-xl text-gray-300 mt-6 max-w-3xl mx-auto">
+                    Reach out for personalized consultations or general inquiries about Vedic astrology.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-cosmic-700 p-8 rounded-xl border border-gold-500">
+                    <h3 class="text-2xl font-serif text-gold-500 mb-6">Send a Message</h3>
+                    <form>
+                        <div class="mb-6">
+                            <input type="text" placeholder="Your Name" class="w-full bg-cosmic-800 border border-gray-600 rounded-md px-4 py-3 text-white">
+                        </div>
+                        <div class="mb-6">
+                            <input type="email" placeholder="Email Address" class="w-full bg-cosmic-800 border border-gray-600 rounded-md px-4 py-3 text-white">
+                        </div>
+                        <div class="mb-6">
+                            <textarea rows="5" placeholder="Your Message" class="w-full bg-cosmic-800 border border-gray-600 rounded-md px-4 py-3 text-white"></textarea>
+                        </div>
+                        <button class="bg-gold-500 text-cosmic-900 px-6 py-3 rounded-md font-medium hover:bg-gold-400 transition">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="bg-cosmic-700 p-8 rounded-xl border border-gold-500">
+                        <h3 class="text-2xl font-serif text-gold-500 mb-4">Contact Info</h3>
+                        <div class="space-y-4 text-gray-300">
+                            <p><i class="fas fa-phone-alt text-gold-500 mr-2"></i>+91 98765 43210</p>
+                            <p><i class="fas fa-envelope text-gold-500 mr-2"></i>consult@predictionalastrologer.com</p>
+                            <p><i class="fas fa-map-marker-alt text-gold-500 mr-2"></i>Varanasi, Uttar Pradesh, India</p>
+                        </div>
+                    </div>
+                    <div class="bg-cosmic-700 p-8 rounded-xl border border-gold-500">
+                        <h3 class="text-2xl font-serif text-gold-500 mb-4">Follow Me</h3>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-gold-500 hover:text-white text-xl"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="text-gold-500 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gold-500 hover:text-white text-xl"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-gold-500 hover:text-white text-xl"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-cosmic-900 border-t border-gold-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-serif text-white text-lg mb-4">Predictional Astrologer</h4>
+                    <p class="text-gray-300 text-sm">Vedic astrology consultations with 15+ years of experience in birth chart analysis and spiritual guidance.</p>
+                </div>
+                <div>
+                    <h4 class="font-serif text-white text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-300 hover:text-gold-500 text-sm">Services</a></li>
+                        <li><a href="#blog" class="text-gray-300 hover:text-gold-500 text-sm">Blog</a></li>
+                        <li><a href="#experience" class="text-gray-300 hover:text-gold-500 text-sm">About</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-gold-500 text-sm">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif text-white text-lg mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-gold-500 text-sm">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-gold-500 text-sm">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-gold-500 text-sm">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif text-white text-lg mb-4">Newsletter</h4>
+                    <form class="flex gap-2">
+                        <input type="email" placeholder="Enter your email" class="bg-cosmic-800 text-white px-4 py-2 rounded-md flex-1 text-sm">
+                        <button class="bg-gold-500 text-cosmic-900 px-4 py-2 rounded-md text-sm hover:bg-gold-400">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-cosmic-700 mt-12 pt-8 text-center">
+                <p class="text-gray-300 text-sm">&copy; 2023 Predictional Astrologer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://api.whatsapp.com/send?phone=919876543210" target="_blank" rel="noopener noreferrer"
+        class="fixed bottom-8 right-8 w-14 h-14 bg-gold-500 text-cosmic-900 rounded-full flex items-center justify-center 
+                shadow-lg transition-all duration-300 hover:bg-gold-400 hover:shadow-xl hover:-translate-y-1
+                animate-pulse md:bottom-10 md:right-10 md:w-16 md:h-16"
+        aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp text-2xl md:text-3xl"></i>
+     </a>
+</body>
+</html>
